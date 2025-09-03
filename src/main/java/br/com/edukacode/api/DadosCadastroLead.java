@@ -1,0 +1,16 @@
+package br.com.edukacode.api;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+
+public record DadosCadastroLead(
+    @NotBlank
+    String nome,
+    @NotBlank
+    String email,
+    @NotBlank
+    @Pattern(regexp="\\d{11,12}") 
+    String telefone,
+    @NotBlank
+    @Pattern(regexp="\\d{11}") 
+    String cpf) {}
