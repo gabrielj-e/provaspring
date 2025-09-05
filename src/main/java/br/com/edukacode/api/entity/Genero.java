@@ -1,5 +1,6 @@
-package br.com.edukacode.api;
+package br.com.edukacode.api.entity;
 
+import br.com.edukacode.api.dto.DadosCadastroGenero;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
