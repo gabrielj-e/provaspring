@@ -31,4 +31,18 @@ public class Lead {
         this.telefone = dados.telefone();
         this.cpf = dados.cpf();
     }
+    public void atualizarInformacoes(DadosAtualizacaoLead dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if (dados.email() != null) {
+            this.email = dados.email();
+        }
+        if (dados.telefone() != null) {
+            this.telefone = dados.telefone();
+        }
+        if (dados.cpf() != null) {
+            this.cpf = dados.cpf();
+        }
+    }
 }

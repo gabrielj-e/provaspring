@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,12 +38,15 @@ private LeadRepository repository;
         return repository.findAll(paginacao).map(DadosListagemLead::new);// Implementação do método para listar todos os leads
     }
     @PutMapping
-    public void atualizarLead() {
-        // Implementação do método para atualizar um lead existente
+    @Transactional
+    public void atualizarLead(@RequestBody @Valid DadosAtualizacaoLead dados) {
+       var lead = repository.getReferenceById(dados.id());
+       lead.atualizarInformacoes(dados); // Implementação do método para atualizar um lead existente
     }
-    @DeleteMapping
-    public void excluirLead() {
-        // Implementação do método para excluir um lead
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirLead(@PathVariable Long id) {
+       repository.deleteById(id); // Implementação do método para excluir um lead
     }
 
 }

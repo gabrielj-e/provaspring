@@ -112,4 +112,8 @@ mvn test
 
 💡 *Este projeto foi desenvolvido com foco acadêmico e profissional, aplicando boas práticas REST, versionamento de banco com Flyway e persistência com JPA/Hibernate.*
 
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> 481e222a6833e19b11cb9218e44740ec6111e9f9
